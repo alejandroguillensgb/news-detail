@@ -1,0 +1,20 @@
+<ion-view mz-screen cache-view="false" view-title="{{ title | translate }}">
+    <ion-nav-buttons side="left">
+        <img ng-src="resources/back.svg"  height="35" ng-click="goBack()">
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <img ng-src="resources/bookmark.svg" ng-show="!isBookmarked" height="35" ng-click="bookmark(data)">
+        <img ng-src="resources/bookmarkOn.svg"  ng-show="isBookmarked" height="35" ng-click="bookmark(data)">
+    </ion-nav-buttons>
+    <ion-content>
+        <img ng-src="{{data.thread.main_image}}" class="full-image">
+        <div class="padding">
+	        <h3>{{data.title}}</h3>
+	        <h4>By {{data.author}} </h4>
+	        <h4>Published by {{data.thread.section_title}}</h4>
+	        <h6> {{data.thread.published | date : 'fullDate'}} <h6>
+	        <img ng-src="{{data.thread.main_image}}" class="full-image">
+	        <p class="padding-top">{{data.text}}</p>
+	    </div>
+    </ion-content>
+</ion-view>
